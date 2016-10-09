@@ -1,0 +1,13 @@
+webservice02\interceptorHelpers\CDataWriterInterceptor.class
+net\webservicex\ObjectFactory.class
+net\webservicex\GetWeatherResponse.class
+net\webservicex\package-info.class
+net\webservicex\GetWeather.class
+net\webservicex\GlobalWeatherSoap.class
+net\webservicex\GetCitiesByCountryResponse.class
+net\webservicex\GlobalWeather.class
+webservice02\interceptorHelpers\CDataXMLStreamWriter.class
+webservice02\GlobalWeatherImpl.class
+net\webservicex\GlobalWeatherHttpPost.class
+net\webservicex\GlobalWeatherHttpGet.class
+net\webservicex\GetCitiesByCountry.class

@@ -1,0 +1,36 @@
+<mule xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/current/mule-cxf.xsd">
+	<spring:beans>
+		<spring:bean id="myMockService" class="webservice02.GlobalWeatherImpl" />
+
+	</spring:beans>
+
+	<http:listener-config name="listener-config" host="0.0.0.0"
+		port="63081" doc:name="HTTP Listener Configuration" />
+
+	<http:listener-config name="HTTP_Listener_Configuration"
+		host="0.0.0.0" port="8083" doc:name="HTTP Listener Configuration" />
+
+	<flow name="mockWeatherService">
+		<http:listener config-ref="listener-config" path="weather"
+			doc:name="HTTP" />
+		<cxf:jaxws-service serviceClass="net.webservicex.GlobalWeatherSoap"
+			doc:name="CXF">
+			<cxf:outInterceptors>
+				<spring:bean id="MyInterceptor"
+					class="webservice02.interceptorHelpers.CDataWriterInterceptor" />
+			</cxf:outInterceptors>
+		</cxf:jaxws-service>
+
+		<component doc:name="Java">
+			<spring-object bean="myMockService" />
+		</component>
+
+	</flow>
+</mule>
