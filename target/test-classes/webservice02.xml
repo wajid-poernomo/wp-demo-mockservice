@@ -22,10 +22,10 @@ http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/
 			doc:name="HTTP" />
 		<cxf:jaxws-service serviceClass="net.webservicex.GlobalWeatherSoap"
 			doc:name="CXF">
-			<cxf:outInterceptors>
-				<spring:bean id="MyInterceptor"
-					class="webservice02.interceptorHelpers.CDataWriterInterceptor" />
-			</cxf:outInterceptors>
+<!-- 			<cxf:outInterceptors> -->
+<!-- 				<spring:bean id="MyInterceptor" -->
+<!-- 					class="webservice02.interceptorHelpers.CDataWriterInterceptor" /> -->
+<!-- 			</cxf:outInterceptors> -->
 		</cxf:jaxws-service>
 
 		<component doc:name="Java">

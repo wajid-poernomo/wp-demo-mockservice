@@ -34,19 +34,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCitiesByCountryResponse }
+     * Create an instance of {@link GetWeatherResponse }
      * 
      */
-    public GetCitiesByCountryResponse createGetCitiesByCountryResponse() {
-        return new GetCitiesByCountryResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetWeather }
-     * 
-     */
-    public GetWeather createGetWeather() {
-        return new GetWeather();
+    public GetWeatherResponse createGetWeatherResponse() {
+        return new GetWeatherResponse();
     }
 
     /**
@@ -58,11 +50,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetWeatherResponse }
+     * Create an instance of {@link GetWeather }
      * 
      */
-    public GetWeatherResponse createGetWeatherResponse() {
-        return new GetWeatherResponse();
+    public GetWeather createGetWeather() {
+        return new GetWeather();
+    }
+
+    /**
+     * Create an instance of {@link GetCitiesByCountryResponse }
+     * 
+     */
+    public GetCitiesByCountryResponse createGetCitiesByCountryResponse() {
+        return new GetCitiesByCountryResponse();
     }
 
     /**
