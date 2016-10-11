@@ -8,16 +8,52 @@ import net.webservicex.GlobalWeatherSoap;
 public class GlobalWeatherImpl implements GlobalWeatherSoap {
 
 	public String getCitiesByCountry(String countryName) {
-		return "<NewDataSet>"
-				+ "<Table>"
-				+ "<Country>Australia</Country>"
-				+ "<City>Archerfield Aerodrome</City>"
-				+ "</Table>"
-				+ "<Table>"	
-				+ "<Country>Australia</Country>"
-				+ "<City>Amberley Aerodrome</City>"
-				+ "</Table>"
+		
+		if(countryName.isEmpty())
+		{
+			return 	"<NewDataSet>" 
+					+ "<Table>" + "<Country>Algeria</Country>" + "<City>Tlemcen Zenata</City>" + "</Table>" + "<Table>"
+					+ "<Country>Algeria</Country>" + "<City>Oran / Es Senia</City>" + "</Table>"  + "<Table>"
+					+ "<Country>Tunisia</Country>" + "<City>Djerba Mellita</City>" + "</Table>" + "<Table>"
+					+ "<Country>Tunisia</Country>" + "<City>Kairouan</City>" + "</Table>" +  "<Table>"
+					+ "<Country>Finland</Country>" + "<City>Ahtari</City>" + "</Table>" + "<Table>"
+					+ "<Country>Finland</Country>" + "<City>Ivalo</City>" + "</Table>" + "<Table>"
+					+ "<Country>Italy</Country>" + "<City>Treviso / Istrana</City>" + "</Table>" + "<Table>"
+					+ "<Country>Italy</Country>" + "<City>Vicenza</City>" + "</Table>" + "<Table>"
+					+ "<Country>United States</Country>" + "<City>Wainwright Distant Early Warning</City>" + "</Table>"
+					+ "</NewDataSet>";
+		}
+		
+		if(countryName == "Canada")
+			return "<NewDataSet>" + "<Table>" + "<Country>Canada</Country>" + "<City>Quaqtaq Airport</City>" + "</Table>" + "</NewDataSet>";
+		
+		if(countryName.equalsIgnoreCase("Algeria"))
+			
+		return 	"<NewDataSet>" 
+				+ "<Table>" + "<Country>Algeria</Country>" + "<City>Tlemcen Zenata</City>" + "</Table>" + "<Table>"
+				+ "<Country>Algeria</Country>" + "<City>Oran / Es Senia</City>" + "</Table>" + "</NewDataSet>";
+				
+		if(countryName.equalsIgnoreCase("Tunisia"))
+			return "<NewDataSet>" + "<Table>"
+				+ "<Country>Tunisia</Country>" + "<City>Djerba Mellita</City>" + "</Table>" + "<Table>"
+				+ "<Country>Tunisia</Country>" + "<City>Kairouan</City>" + "</Table>" + "</NewDataSet>";
+				
+		if(countryName.equalsIgnoreCase("Finland"))
+			return "<NewDataSet>" + "<Table>"
+				+ "<Country>Finland</Country>" + "<City>Ahtari</City>" + "</Table>" + "<Table>"
+				+ "<Country>Finland</Country>" + "<City>Ivalo</City>" + "</Table>" + "</NewDataSet>";
+				
+		if(countryName.equalsIgnoreCase("Italy"))
+			return "<NewDataSet>" + "<Table>"
+				+ "<Country>Italy</Country>" + "<City>Treviso / Istrana</City>" + "</Table>" + "<Table>"
+				+ "<Country>Italy</Country>" + "<City>Vicenza</City>" + "</Table>" + "</NewDataSet>";
+		
+		if(countryName.equalsIgnoreCase("United States"))
+			return "<NewDataSet>" + "<Table>"
+				+ "<Country>United States</Country>" + "<City>Wainwright Distant Early Warning</City>" + "</Table>"
 				+ "</NewDataSet>";
+		
+		return "Data Not Found";
 	};
 
 	public String getWeather(String cityName, String countryName) {
