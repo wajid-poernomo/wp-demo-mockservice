@@ -53,7 +53,7 @@ public class GlobalWeatherImpl implements GlobalWeatherSoap {
 				+ "<Country>United States</Country>" + "<City>Wainwright Distant Early Warning</City>" + "</Table>"
 				+ "</NewDataSet>";
 		
-		return "Data Not Found";
+		return "&lt;NewDataSet /&gt;";
 	};
 
 	public String getWeather(String cityName, String countryName) {
