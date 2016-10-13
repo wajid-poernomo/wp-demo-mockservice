@@ -24,8 +24,4 @@ This service supports the following test cases. These are all based on the behav
 **Technical Commentary**
 
 Because the data is returned as CDATA, initially looked to building an interceptor to output this into the response. 
-It appears the CXF component already does this when output is xml written as a string, so this step was not needed. Because of the CDATA 
-this was a theme throughout this project - to encode or not to encode. 
-
-Having a stricter approach to schema, mime/type and encoding (as messages flow between mule components), as well as creating layers of indirection 
-for testability, are all practices I would use going forwards as a result of this experience.
+It appears the CXF component already does this when output is xml written as a string, so this step was not needed.
