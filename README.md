@@ -17,7 +17,7 @@ This service supports the following test cases. These are all based on the behav
 1. Valid Country Name - returns country and cities.
 2. Empty input - returns all countires and cities. 
 3. "Non existing" Country Name - returns "&amp;lt;NewDataSet /&amp;gt;" as the payload.
-4. GetWeather returns mock data weather data.
+4. GetWeather returns mock weather data.
 5. When the city name is specified as 'hobbiton', returns "No Data Found".
 
 
@@ -25,5 +25,7 @@ This service supports the following test cases. These are all based on the behav
 
 Because the data is returned as CDATA, initially looked to building an interceptor to output this into the response. 
 It appears the CXF component already does this when output is xml written as a string, so this step was not needed. Because of the CDATA 
-this was a theme throughout this project - to encode or not to encode, and going forwards looking at this pattern of behavior in more detail
-for different Mule components would be time well spent.
+this was a theme throughout this project - to encode or not to encode. 
+
+Having a stricter approach to schema, mime/type and encoding (as messages flow between mule components), as well as creating layers of indirection 
+for testability, are all practices I would use going forwards as a result of this experience.
