@@ -20,7 +20,10 @@ This service supports the following test cases. These are all based on the behav
 4. GetWeather returns mock data weather data.
 5. When the city name is specified as 'hobbiton', returns "No Data Found".
 
+
+**Technical Commentary**
+
 Because the data is returned as CDATA, initially looked to building an interceptor to output this into the response. 
-It appears the CXF component already does this when output is xml written as a string, so this step was not needed. This has made an
-an challenge through this project - to encode or not to encode, and going forwards looking at this pattern of behavior in more detail
+It appears the CXF component already does this when output is xml written as a string, so this step was not needed. Because of the CDATA 
+this was a theme throughout this project - to encode or not to encode, and going forwards looking at this pattern of behavior in more detail
 for different Mule components would be time well spent.
